@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+  <script>
+    window.onload = function(){
+      new Vue({
+        el     : "#box",
+        data   : {
+          arr : ['apple', 'banana', 'orange', 'pear'],
+          json: {
+            a: 'apple',
+            b: 'banana',
+            c: 'orange'
+          },
+          a   : true
+        },
+        methods: {
+          add   : function(){
+            this.arr.push('torma');
+          },
+          change: function(){
+
+          },
+          show  : function(){
+            alert(1);
+          },
+        },
+      });
+    };
+  </script>
+</head>
+<body>
+<div id="box">
+  <input type="button" value="按钮" v-on:click="show()"/> <!--基础事件-->
+  {{12|currency}}
+</div>
+
+</body>
+</html>
