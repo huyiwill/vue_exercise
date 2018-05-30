@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>键盘</title>
+  <script src="vue.js"></script>
+  <script>
+    window.onload=function(){
+      new Vue({
+        el:"#box",
+        data:{},
+        methods:{
+          show:function(e){
+            if(e.keyCode===13){
+                alert('您按的是回车键');
+            }
+            alert(e.keyCode);//打印出每个键盘的code码
+          }
+        },
+      });
+    }
+  </script>
+</head>
+<body>
+<div id="box">
+  <input type="text" v-on:keydown="show($event)"/>
+  <input type="text" v-on:keydown="show($event)"/>
+  <input type="text" placeholder="按住回车" v-on:keydown="show($event)"/>
+</div>
+</body>
+</html>
