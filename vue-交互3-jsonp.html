@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>交互</title>
+</head>
+<script src="vue.js"></script>
+<script src="vue-resource.js"></script>
+<script>
+  window.onload = function(){
+    new Vue({
+      el     : 'body',
+      data   : {},
+      methods: {
+        get: function(){
+          this.$http.jsonp('https://sug.so.360.cn/suggest', { //向文件传输参数
+            word:'a'
+          },{
+            emulateJSON:true  // 模仿json
+          }).then(function(res){ //将数据传输到php处理
+            alert(res.data.s);
+          }, function(res){
+            alert(res.status)
+          });
+        },
+      },
+    });
+  };
+</script>
+<body>
+<input type="button" value="按钮1" v-on:click="get()"/>
+<input type="button" value="按钮2" @click="get()"/>
+</body>
+</html>

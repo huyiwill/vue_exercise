@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>循环</title>
+  <script src="vue.js"></script>
+  <script>
+    window.onload=function(){
+      new Vue({
+        el:'#box',
+        data:{
+          arr:['apple','banana','orange','pear'],
+          json:{a:'apple',b:'banana',c:'orange'}
+        },
+      });
+    }
+  </script>
+</head>
+<body>
+<div id="box">
+  <ul>
+    <li v-for="value in arr">
+        {{value}}
+    </li>
+  </ul>
+</div>
+</body>
+</html>

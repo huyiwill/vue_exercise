@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>属性</title>
+  <script src="vue.js"></script>
+  <script>
+    window.onload=function(){
+      new Vue({
+        el:'#box',
+        data:{
+          url:'https://www.baidu.com/img/bd_logo1.png',
+          w:'200px',
+          t:'这是图片'
+        },
+        methods:{
+
+        },
+      });
+    }
+  </script>
+</head>
+<body>
+<div id="box">
+  <img v-bind:src="url" alt=""/>
+  <img :src="url" alt=""/>
+  <img v-bind:src="url" alt="dd" v-bind:width="w" v-bind:title="t"/>
+</div>
+</body>
+</html>

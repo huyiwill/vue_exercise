@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+  <script>
+    window.onload=function(){
+        new Vue({
+          el:'#box .box',
+          data:{
+            msg:'welcome vue',
+            mm : 'dddd'
+          },
+        },{
+          el:'.class',
+          data:{
+            mm : 'dddd'
+          },
+        });
+
+    }
+  </script>
+</head>
+<body>
+<div id="box">
+<input type="text" v-model="msg"/>
+  {{msg}}
+  <hr/>
+  <div class="box">
+  <input type="text" v-mode="mm"/>
+    {{mm}}
+  </div>
+</div>
+</body>
+</html>
