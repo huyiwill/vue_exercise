@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+<div id="box">
+  <!--<input type="text" v-model="a"/>{{a}}-->
+  <ul><!--  从数组中位置5-2=3开始  筛选2个数字   -->
+    <li v-for="val in arr | limitBy 2 arr.length-2">   <!-- filterBy依照v-model绑定数据来筛选出想要的数据 -->
+      {{val}}
+    </li>
+  </ul>
+</div>
+
+<script>
+  var vm = new Vue({
+    data   : {
+      arr: [1, 2, 3, 4, 5],
+      a  : ''
+    },
+    methods: {},
+  }).$mount('#box');
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+<div id="box">
+  <input type="text" v-model="a"/>{{a}}
+  <ul>
+    <li v-for="val in arr | filterBy a">   <!-- filterBy依照v-model绑定数据来筛选出想要的数据 -->
+      {{val}}
+    </li>
+  </ul>
+</div>
+
+<script>
+  var vm = new Vue({
+    data   : {
+      arr: ['cc', 'bb', 'ff', 'a'],
+      a  : ''
+    },
+    methods: {},
+  }).$mount('#box');
+</script>
+</body>
+</html>

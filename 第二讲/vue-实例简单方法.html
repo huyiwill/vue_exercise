@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+  <script>
+    window.onload = function(){
+      var vm = new Vue({  //实例1
+        el  : "#box",
+        data: {
+          a: 1
+        },
+      });
+      var vm2 = new Vue({   //实例2
+        el  : "#box2",
+        data: {
+          a: 2
+        }
+      });
+      // vm是Vue实例，$el组件  $el 类似 this.el     $data--this.data
+      vm.$el.style.background = 'red';
+      vm2.$el.style.background = 'blue';
+    }
+  </script>
+</head>
+<body>
+<div id="box">
+  {{a}}
+</div>
+
+<div id="box2">
+  {{a}}
+</div>
+</body>
+</html>

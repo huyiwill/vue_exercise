@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+  <script>
+    window.onload = function(){
+      var vm = new Vue({
+        el  : "#box",
+        data: {
+          json: {
+            name: 'strive',
+            age : 16
+          },
+          b   : 3
+        },
+      });
+      //$wath用于监听数据变化
+      vm.$watch('json', function(){
+        alert('开始发生变化');
+      }, {deep: true});  //加上深度监听才有效，deep
+
+      document.onclick = function(){
+        vm.json.name = 'aaa';
+        //vm.$data.json.name='aaa';
+      };
+    }
+  </script>
+</head>
+<body>
+<div id="box">
+  {{json | json}}
+  <br>
+  {{b}}
+</div>
+</body>
+</html>

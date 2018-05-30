@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+
+
+</head>
+<body>
+<div id="box">
+  <span v-text="a"></span>
+</div>
+</body>
+<script>
+  var vm = new Vue({
+    //el  : '#box',
+    data: {
+      a: 1
+    },
+  }).$mount('#box');  //手动挂载到节点  box上
+  //console.log(vm.$data.a);
+</script>
+</html>

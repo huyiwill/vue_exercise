@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+  <script>
+    window.onload = function(){
+      var vm = new Vue({
+        el  : "#box",
+        data: {
+          a: 11,
+          b: 3
+        },
+      });
+      //$wath用于监听数据变化
+      vm.$watch('a', function(){
+        alert('开始发生变化');
+        this.b = this.a + 33;
+      });
+    }
+  </script>
+</head>
+<body>
+<div id="box">
+  <input type="text" v-model="a"/>
+  {{a}}
+  <br>
+  {{b}}
+</div>
+</body>
+</html>
