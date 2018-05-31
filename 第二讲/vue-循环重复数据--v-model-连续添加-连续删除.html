@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+<div id="box">
+  <input type="text" v-model="aa"/>
+  <input type="button" value="添加" v-on:click="add()"/>
+  <input type="button" value="移除" v-on:click="del()">
+  <ul>
+    <li v-for="val in arr" track-by="$index">
+      {{val}}
+    </li>
+  </ul>
+</div>
+
+<script>
+  var vm = new Vue({
+    data   : {
+      arr: ['apple', 'pear', 'orange'],
+      aa : ''
+    },
+    methods: {
+      add: function(){
+        this.arr.push(this.aa);
+      },
+      del: function(){
+        this.arr.splice(0, 2);  //移除数组中的元素 0和-1意思是倒序还是正序排   2的意思是位移
+      }
+    }
+  }).$mount("#box");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+  <script>
+    Vue.directive('drag', function(){
+      var oDiv = this.el;
+      oDiv.onmousedown = function(ev){ //鼠标按下
+        var disX = ev.clientX - oDiv.offsetLeft;
+        var disY = ev.clientY - oDiv.offsetTop;
+
+        document.onmousemove = function(ev){  //鼠标移动
+          var l = ev.clientX - disX;
+          var t = ev.clientY - disY;
+          oDiv.style.left = l + 'px';
+          oDiv.style.top = t + 'px';
+        };
+        document.onmouseup = function(){//鼠标松开
+          document.onmousemove = null;
+          document.onmouseup = null;
+        };
+      };
+    });
+
+    window.onload = function(){
+      var vm = new Vue({
+        el  : '#box',
+        data: {
+          msg: 'welcome'
+        }
+      });
+    };
+
+  </script>
+</head>
+<body>
+<div id="box">
+  <div v-drag :style="{width:'100px', height:'100px', background:'blue', position:'absolute', right:0, top:0}"></div>
+  <div v-drag :style="{width:'100px', height:'100px', background:'red', position:'absolute', left:0, top:0}"></div>
+  <div v-drag :style="{width:'100px', height:'100px', background:'green', position:'absolute', left:600, top:0}"></div>
+
+</div>
+</body>
+</html>

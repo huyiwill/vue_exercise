@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+  <script>
+    //自定义指令
+    Vue.directive('color', function(color){
+      this.el.style.background = color;
+    });
+
+    window.onload = function(){
+      var vm = new Vue({
+        data: {
+          a: 'red'
+        }
+      }).$mount('#box');
+    }
+  </script>
+</head>
+<body>
+<div id="box">
+  <input type="text" v-model="a"/>
+  <span v-color="a">
+    {{a}}
+  </span>
+</div>
+</body>
+</html>

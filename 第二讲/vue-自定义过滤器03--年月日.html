@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+<div id="box">
+  {{a | date}}
+</div>
+</body>
+
+<script>
+  Vue.filter('date', function(input){  //input 相当于参数 a = Date.now()
+    var oDate = new Date(input);
+    return oDate.getFullYear() + '-' + (oDate.getMonth() + 1) + '-' + oDate.getDate() + '-' + oDate.getHours();
+  });
+
+  var vm = new Vue({
+    el     : "#box",
+    data   : {
+      a: Date.now()
+    },
+    methods: {}
+  });
+</script>
+
+</html>

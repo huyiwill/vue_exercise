@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+  <script>
+    //自定义指令
+    Vue.directive('red', function(){
+      this.el.style.background = 'red';
+    });
+
+    window.onload = function(){
+      var vm = new Vue({
+        el     : "#box",
+        data   : {
+          msg: 'welcome'
+        },
+        methods: {}
+      });
+    }
+  </script>
+</head>
+<body>
+<div id="box">
+  <span v-red>  <!--  使用的是自定义指令  -->
+    aaaaaaaaaa
+  </span>
+</div>
+</body>
+</html>
