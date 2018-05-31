@@ -2,25 +2,25 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/第一讲/vue-循环.html" line="21" />
-    <bookmark url="file://$PROJECT_DIR$/第二讲/vue-循环重复数据--v-model-连续添加-连续删除.html" line="30" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1597bf55-d3d0-41fb-9cc4-459819038c38" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/第二讲/vue-循环重复数据02.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/第二讲/vue-自定义指令.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/第二讲/vue-自定义指令01.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/第二讲/vue-自定义指令02-随意传入改变颜色.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/第二讲/vue-自定义指令03--bind绑定颜色.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/第二讲/vue-自定义指令03.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/第二讲/vue-自定义指令04--拖拽.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/第二讲/vue-自定义过滤器-vue-filter.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/第二讲/vue-自定义过滤器02.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/第二讲/vue-自定义过滤器03--年月日.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/第二讲/vue-自定义过滤器04.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/第二讲/vue-自定义过滤器05-双向过滤.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/img/ad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/img/bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/img/bodyBg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/img/btns.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/img/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/img/inputBg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/img/jj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/img/takeSbmComment.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/img/userBj.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/style/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/style/weibo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/style/weibo_bak.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/vue-resource.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/vue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/第二讲weibo项目/weibo_test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/第一讲/vue-指令-v-model.html" beforeDir="false" afterPath="$PROJECT_DIR$/第一讲/vue-指令-v-model.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/第二讲/vue-简单实例方法4-手动挂载.html" beforeDir="false" afterPath="$PROJECT_DIR$/第二讲/vue-简单实例方法4-手动挂载.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -37,92 +37,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="vue-自定义过滤器02.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义过滤器02.html">
+      <file leaf-file-name="weibo_test.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/第二讲weibo项目/weibo_test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="32" lean-forward="true" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+            <state relative-caret-position="429">
+              <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vue-自定义过滤器04.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义过滤器04.html">
+      <file leaf-file-name="vue-生存周期2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第二讲/vue-生存周期2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+            <state relative-caret-position="620">
+              <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vue-简单实例方法4-手动挂载.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二讲/vue-简单实例方法4-手动挂载.html">
+      <file leaf-file-name="vue-循环重复数据--v-model-连续添加-连续删除.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/第二讲/vue-循环重复数据--v-model-连续添加-连续删除.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="6" lean-forward="true" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vue-自定义指令.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义指令.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vue-自定义指令01.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义指令01.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vue-自定义指令02-随意传入改变颜色.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义指令02-随意传入改变颜色.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="21" column="6" lean-forward="true" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vue-自定义指令03.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义指令03.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vue-自定义指令03--bind绑定颜色.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义指令03--bind绑定颜色.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="404">
-              <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vue-自定义指令04--拖拽.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义指令04--拖拽.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vue-自定义过滤器05-双向过滤.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义过滤器05-双向过滤.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            <state relative-caret-position="528">
+              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -141,6 +78,8 @@
     <findStrings>
       <find>$el</find>
       <find>$options</find>
+      <find>remove</find>
+      <find>console.log</find>
     </findStrings>
     <dirStrings>
       <dir>E:\vue_project\vue1</dir>
@@ -153,7 +92,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/vue-交互3-post.html" />
         <option value="$PROJECT_DIR$/vue-交互3-jsonp.html" />
         <option value="$PROJECT_DIR$/vue-模版.html" />
         <option value="$PROJECT_DIR$/vue-属性.html" />
@@ -204,6 +142,7 @@
         <option value="$PROJECT_DIR$/第二讲/vue-自定义指令03.html" />
         <option value="$PROJECT_DIR$/第二讲/vue-自定义指令03--bind绑定颜色.html" />
         <option value="$PROJECT_DIR$/第二讲/vue-自定义指令04--拖拽.html" />
+        <option value="$PROJECT_DIR$/第二讲weibo项目/weibo_test.html" />
       </list>
     </option>
   </component>
@@ -239,6 +178,11 @@
               <item name="vue1" type="462c0819:PsiDirectoryNode" />
               <item name="第二讲" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="vue1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="vue1" type="462c0819:PsiDirectoryNode" />
+              <item name="第二讲weibo项目" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -258,6 +202,7 @@
       <recent name="E:\vue_project\vue1\第一讲" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\vue_project\vue1\第二讲weibo项目" />
       <recent name="E:\vue_project\vue1\第二讲" />
       <recent name="E:\vue_project\vue1" />
     </key>
@@ -301,12 +246,12 @@
       <workItem from="1527559312642" duration="43000" />
       <workItem from="1527559370166" duration="16377000" />
       <workItem from="1527587700495" duration="2181000" />
-      <workItem from="1527642878117" duration="33507000" />
+      <workItem from="1527642878117" duration="46231000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52108000" />
+    <option name="totallyTimeSpent" value="64832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="498" y="0" width="1400" height="1000" extended-state="0" />
@@ -337,28 +282,12 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/第一讲/post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/第一讲/vue-交互3-jsonp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/第一讲/vue-属性.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/第一讲/vue-循环.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -487,13 +416,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第二讲/vue-生存周期2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/第二讲/vue-简单实例方法3-手动挂载.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -609,13 +531,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第二讲/vue-循环重复数据--v-model-连续添加-连续删除.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义过滤器-vue-filter.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -679,10 +594,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义指令03.html">
+    <entry file="file://$PROJECT_DIR$/第二讲weibo项目/vue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="168">
+          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二讲/自定义指令-元素指令.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义指令04--拖拽.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -693,10 +622,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义指令04--拖拽.html">
+    <entry file="file://$PROJECT_DIR$/第二讲/vue-自定义指令03.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="52" />
+        <state relative-caret-position="264">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二讲/vue-循环重复数据--v-model-连续添加-连续删除.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二讲/vue-生存周期2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="27" column="22" lean-forward="true" selection-start-line="27" selection-start-column="22" selection-end-line="27" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/第二讲weibo项目/weibo_test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="style/weibo.css" rel="stylesheet" type="text/css"/>
+  <script src="vue.js"></script>
+  <script src="vue-resource.js"></script>
+  <script>
+    window.onload = function(){
+      var URL = "http://www.vue.com/weibo.php";
+      var vm = new Vue({
+        el     : '.znsArea',
+        data   : {
+          t1     : '',
+          msgData: []
+        },
+        methods: {
+          add: function(){
+            //发送请求
+            this.$http({
+              url : URL,
+              data: { //后台发送数据
+                act    : 'add',
+                content: this.t1
+              }
+            }).then(function(res){//发送成功接收服务端 回调 返回的数据
+              //console.log(this.msgData);
+              var json = res.data;
+              //msgData添加数据,unshift把数据放到数组的第一个位置
+
+              this.msgData.unshift({
+                content: this.t1,
+                time   : json.time,
+                acc    : 0,
+                red    : 0,
+                id     : json.id
+              });
+              //console.log(this.msgData);
+              this.t1 = ''; //添加到留言板后，将输入框清空
+            });
+          },
+          cut: function(index){
+            //console.log(this.msgData[index]);
+            var info = this.msgData[index];
+            //发送请求
+            this.$http({
+              url : URL,
+              data: {
+                act: 'del',
+                id : info.id,
+              }
+            }).then(function(res){ //回调返回信息
+              var json = res.data;
+              if(json.error === 0){
+                this.msgData.splice(index, 1);
+              }else{
+                alert('删除失败');
+              }
+            });
+            //this.msgData.splice(index,1);
+          },
+        }, //加载页面就调用的方法
+        created: function(){
+          this.$http({ //发送请求获取加载页面所有数据
+            url : URL,
+            data: {
+              act: 'sel',
+            }
+          }).then(function(res){
+             var json = res.data;
+            // console.log(json.info);
+            //var json = eval('('+res.data+')');
+            //console.log(res);
+            if(json.error === 0){
+              console.log(json.info);
+              this.msgData.push(json.info);
+              //console.log(this.msgData);
+            }else{
+              console.log(res);
+              alert('bad');
+            }
+          });
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+<div class="znsArea">
+  <!--留言-->
+  <div class="takeComment">
+    <textarea name="textarea" class="takeTextField" id="tijiaoText" v-model="t1"></textarea>
+    {{t1}}
+    <div class="takeSbmComment">
+      <input type="button" class="inputs" value="" @click="add"/>
+      <span>(可按 Enter 回复)</span>
+    </div>
+  </div>
+  <!--已留-->
+  <div class="commentOn">
+    <div class="noContent" v-show="msgData.length==0">暂无留言</div>
+    <div class="messList">
+      <div class="reply" v-for="item in msgData" track-by="$index">
+        <p class="replyContent">{{item.content}}</p>
+        <p class="operation">
+          <span class="replyTime">{{item.time}}</span>
+          <span class="handle">
+                    	<a href="javascript:;" class="top">{{item.acc}}</a>
+                        <a href="javascript:;" class="down_icon">{{item.ref}}</a>
+                        <a href="javascript:;" v-on:click="cut($index)" class="cut">删除</a>
+                    </span>
+        </p>
+      </div>
+    </div>
+    <div class="page">
+      <a href="javascript:;" class="active">1</a>
+      <a href="javascript:;">2</a>
+      <a href="javascript:;">3</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
