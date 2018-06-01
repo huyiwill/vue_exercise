@@ -12,11 +12,32 @@
       var vm = new Vue({
         el     : '.znsArea',
         data   : {
-          t1     : '',
-          msgData: []
-        },
+          clickPage: 1,
+          pages    : 1,
+          t1       : '',
+          msgData  : []
+        }, // mounted: function(){  //定时执行函数
+        //   this.$nextTick(function(){
+        //     setInterval(this.getpage, 10);
+        //   })
+        // },
         methods: {
-          add: function(){
+          getpage    : function(){ //获取页数
+            this.$http({
+              url : URL,
+              data: {
+                act: 'getpages',
+              }
+            }).then(function(res){
+              if(res.data.error === 0){
+                this.pages = res.data.pages;
+              }else{
+                this.pages = 1;
+              }
+              console.log(this.pages);
+            });
+          },
+          add        : function(){
             //发送请求
             this.$http({
               url : URL,
@@ -28,7 +49,6 @@
               //console.log(this.msgData);
               var json = res.data;
               //msgData添加数据,unshift把数据放到数组的第一个位置
-
               this.msgData.unshift({
                 content: this.t1,
                 time   : json.time,
@@ -36,12 +56,11 @@
                 red    : 0,
                 id     : json.id
               });
-              //console.log(this.msgData);
               this.t1 = ''; //添加到留言板后，将输入框清空
             });
           },
-          cut: function(index){
-            //console.log(this.msgData[index]);
+          cut        : function(index){
+            console.log(this.msgData[index]);
             var info = this.msgData[index];
             //发送请求
             this.$http({
@@ -60,28 +79,130 @@
             });
             //this.msgData.splice(index,1);
           },
-        }, //加载页面就调用的方法
-        created: function(){
-          this.$http({ //发送请求获取加载页面所有数据
-            url : URL,
-            data: {
-              act: 'sel',
-            }
-          }).then(function(res){
-             var json = res.data;
-            // console.log(json.info);
-            //var json = eval('('+res.data+')');
-            //console.log(res);
-            if(json.error === 0){
-              console.log(json.info);
-              this.msgData.push(json.info);
-              //console.log(this.msgData);
-            }else{
+          sel        : function(){//加载页面就调用的方法
+            this.$http({ //发送请求获取加载页面所有数据
+              url : URL,
+              data: {
+                act: 'sel',
+              }
+            }).then(function(res){
+              var json = res.data;
+              this.msgData = [];
+              // console.log(json.info);
+              if(json.error === 0){
+                // this.msgData.push(json.info);
+                this.msgData = json.info; //直接替换  msgData整个数组
+                console.log(this.msgData);
+              }else{
+                //console.log(res);
+                alert('bad');
+              }
+            });
+          },
+          top        : function(index){  //赞
+            var top = this.msgData[index];
+            this.$http({
+              url : URL,
+              data: { //存放参数发送
+                act : 'top',
+                info: top
+              }
+            }).then(function(res){
+              //console.log(top);
+              //修改数组中某个字段的值
+              //Vue.set(top,'acc',2);
               console.log(res);
-              alert('bad');
-            }
-          });
-        }
+              if(res.data === ''){
+                alert('点赞失败');
+              }else{
+                if(res.data.error === 0){
+                  Vue.set(top, 'acc', res.data.acc);
+                }else{
+                  alert('重新点赞');
+                }
+
+              }
+            });
+          },
+          down       : function(index){  //踩
+            var down = this.msgData[index];
+            this.$http({
+              url : URL,
+              data: {
+                act : 'down',
+                info: down,
+              }
+            }).then(function(res){
+              if(res.data === ''){
+                alert('点踩失败');
+              }else{
+                if(res.data.error === 0){
+                  Vue.set(down, 'ref', res.data.ref);
+                }else{
+                  alert('重新点踩');
+                }
+              }
+            });
+          },
+          getPageData: function(n){
+            console.log(this.clickPage);
+            this.$http({
+              url : URL,
+              data: {
+                act: 'get',
+                p  : n
+              },
+            }).then(function(res){
+              var arr = res.data;
+              for(var i = 0; i < arr.length; i++){
+                this.msgData.push({
+                  content: arr[i].content,
+                  time   : arr[i].time,
+                  acc    : arr[i].acc,
+                  ref    : arr[i].ref,
+                  id     : arr[i].id
+                });
+              }
+              //this.msgData.push(arr);
+            });
+          },
+
+          getPageDatas: function(n){
+
+            this.clickPage = n;
+            console.log(this.clickPage);
+            this.$http({
+              url : URL,
+              data: {
+                act: 'get',
+                p  : n
+              },
+            }).then(function(res){
+              var arr = res.data;
+              this.msgData = []; //重新填入数据
+              for(var i = 0; i < arr.length; i++){
+                this.msgData.push({
+                  content: arr[i].content,
+                  time   : arr[i].time,
+                  acc    : arr[i].acc,
+                  ref    : arr[i].ref,
+                  id     : arr[i].id
+                });
+              }
+              //this.msgData.push(arr);
+            });
+          },
+
+        },
+
+        created: function(){
+          this.getpage();
+          //this.sel();
+          this.getPageData(this.clickPage);
+        },
+        ready  : function(){
+
+        },
       });
     }
   </script>
@@ -102,23 +223,26 @@
     <div class="noContent" v-show="msgData.length==0">暂无留言</div>
     <div class="messList">
       <div class="reply" v-for="item in msgData" track-by="$index">
-        <p class="replyContent">{{item.content}}</p>
+        <p class="replyContent">{{item.content}} </p>
         <p class="operation">
           <span class="replyTime">{{item.time}}</span>
           <span class="handle">
-                    	<a href="javascript:;" class="top">{{item.acc}}</a>
-                        <a href="javascript:;" class="down_icon">{{item.ref}}</a>
+                    	<a href="javascript:;" v-on:click="top($index)" class="top">{{item.acc}}</a>
+                        <a href="javascript:;" v-on:click="down($index)" class="down_icon">{{item.ref}}</a>
                         <a href="javascript:;" v-on:click="cut($index)" class="cut">删除</a>
                     </span>
         </p>
       </div>
     </div>
     <div class="page">
-      <a href="javascript:;" class="active">1</a>
-      <a href="javascript:;">2</a>
-      <a href="javascript:;">3</a>
+
+      <a v-on:click="getPageDatas($index+1)" href="#" v-for="p in pages" track-by="$index">
+        {{p+1}}
+      </a>
+
     </div>
   </div>
 </div>
 </body>
+
 </html>

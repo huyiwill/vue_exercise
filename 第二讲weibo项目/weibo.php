@@ -39,19 +39,55 @@ $act       = $_GET['act'];
 $PAGE_SIZE = 6;
 
 switch($act){
-    case 'sel':
-        $sql = "select * from weibo";
+    case 'top':
+        //赞
+        $info = $_GET['info'];
+        $id   = $info['id'];
+        $sql  = "select acc from weibo where id='{$id}'";
+        $res  = mysqli_query($db, $sql);
+        $row  = mysqli_fetch_array($res);
+        $acc  = $row['acc'] + 1;
+        $sql  = "update weibo set acc={$acc} where id={$id}";
+        $r    = mysqli_query($db, $sql);
+        if($r){
+            echo json_encode(array('error' => 0, 'acc' => $acc));
+        }else{
+            echo json_encode(array('error' => -1));
+        }
+        break;
+    case 'down':
+        //踩
+        $info = $_GET['info'];
+        $id   = $info['id'];
+        $sql  = "select ref from weibo where id='{$id}'";
+        $res  = mysqli_query($db, $sql);
+        $row  = mysqli_fetch_array($res);
+        $ref  = $row['ref'] + 1;
+        $sql  = "update weibo set ref={$ref} where id={$id}";
+        $r    = mysqli_query($db, $sql);
+        if($r){
+            echo json_encode(array('error' => 0, 'ref' => $ref));
+        }else{
+            echo json_encode(array('error' => -1));
+        }
+        break;
+    case 'sel':  //模拟加载数据
+        $sql = "select * from weibo order by id desc limit 10";
         $res = mysqli_query($db, $sql);
         $arr = array();
         while($row = mysqli_fetch_row($res)){
-            $arr[] = $row;
+            $arr[$row[0]]['id']      = $row[0];
+            $arr[$row[0]]['content'] = $row[1];
+            $arr[$row[0]]['time']    = $row[2];
+            $arr[$row[0]]['acc']     = $row[3];
+            $arr[$row[0]]['ref']     = $row[4];
         }
 
         //$rows = mysqli_fetch_array($res);
         if(is_array($arr)){
             $data = array(
                 'error' => 0,
-                'info'  => (object)$arr
+                'info'  => array_merge($arr)
             );
             echo json_encode($data);
         }else{
@@ -61,6 +97,44 @@ switch($act){
             );
             echo json_encode($data);
         }
+        break;
+    case 'get':
+        //获取数据
+        $page = $_GET['p'];
+        if($page < 1){
+            $page = 1;
+        }
+        $s      = ($page - 1) * $PAGE_SIZE;
+        $sql    = "SELECT * FROM weibo ORDER BY id DESC LIMIT {$s}, {$PAGE_SIZE}";
+        $res    = mysqli_query($db, $sql);
+        $result = array();
+        while($row = mysqli_fetch_array($res)){
+            $result[$row[0]]['id']      = $row[0];
+            $result[$row[0]]['content'] = $row[1];
+            $result[$row[0]]['time']    = $row[2];
+            $result[$row[0]]['acc']     = $row[3];
+            $result[$row[0]]['ref']     = $row[4];
+            //array_push($arr, '"id":' . $row[0]);
+            //array_push($arr, '"content":' . $row[1]);
+            //array_push($arr, '"time":' . $row[2]);
+            //array_push($arr, '"acc":' . $row[3]);
+            //array_push($arr, '"ref":' . $row[4]);
+            //array_push($result,implode(',',$arr));
+        }
+
+        if(count($result) > 0){
+            echo json_encode(array_merge($result));
+        }else{
+            echo json_encode(array());
+        }
+        break;
+    case 'getpages':
+        //获取页数
+        $sql    = "select count(*) as c from weibo";
+        $res    = mysqli_query($db, $sql);
+        $pcount = mysqli_fetch_array($res);
+        $pages  = ceil($pcount['c'] / $PAGE_SIZE);
+        echo json_encode(array('error' => 0, 'pages' => $pages));
         break;
     case 'add':
         $con  = $_GET['content'];
