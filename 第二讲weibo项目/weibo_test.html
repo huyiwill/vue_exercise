@@ -7,6 +7,10 @@
   <script src="vue.js"></script>
   <script src="vue-resource.js"></script>
   <script>
+   Vue.filter('time',function(value){
+      return new Date(parseInt(value)*1000).toLocaleString().replace();
+   });
+
     window.onload = function(){
       var URL = "http://www.vue.com/weibo.php";
       var vm = new Vue({
@@ -145,7 +149,6 @@
             });
           },
           getPageData: function(n){
-            console.log(this.clickPage);
             this.$http({
               url : URL,
               data: {
@@ -154,6 +157,7 @@
               },
             }).then(function(res){
               var arr = res.data;
+              this.msgData = [];
               for(var i = 0; i < arr.length; i++){
                 this.msgData.push({
                   content: arr[i].content,
@@ -168,9 +172,8 @@
           },
 
           getPageDatas: function(n){
-
             this.clickPage = n;
-            console.log(this.clickPage);
+            //console.log(this.clickPage);
             this.$http({
               url : URL,
               data: {
@@ -225,7 +228,7 @@
       <div class="reply" v-for="item in msgData" track-by="$index">
         <p class="replyContent">{{item.content}} </p>
         <p class="operation">
-          <span class="replyTime">{{item.time}}</span>
+          <span class="replyTime">{{item.time | time}</span>
           <span class="handle">
                     	<a href="javascript:;" v-on:click="top($index)" class="top">{{item.acc}}</a>
                         <a href="javascript:;" v-on:click="down($index)" class="down_icon">{{item.ref}}</a>
