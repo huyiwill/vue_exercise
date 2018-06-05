@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <!--<script src="node_modules/vue/dist/vue.common.js"></script>-->
+  <script src="node_modules/vue/vue-router/dist/vue-router.js"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+<div id="box">
+  <ul>
+    <li>
+      <a v-link="{path:'/home'}">主页</a>
+    </li>
+    <li>
+      <a v-link="{path:'/'}">跳转主页</a>
+    </li>
+    <li>
+      <a v-link="{path:'/news'}">新闻</a>
+    </li>
+  </ul>
+
+  <div>
+    <router-view></router-view>
+  </div>
+
+  <template id="home">
+    <h3>我是主页</h3>
+    <div>
+      <a v-link="{path:'/home/login'}">登录</a>
+      <a v-link="{path:'/home/reg'}">注册</a>
+    </div>
+    <router-view></router-view>
+  </template>
+
+  <template id="news">
+    <h3>我是新闻</h3>
+  </template>
+
+  <template id="login">
+    <strong>我是登录信息</strong>
+  </template>
+
+  <template id="reg">
+    <strong>我是注册信息</strong>
+  </template>
+
+</div>
+<script>
+  //根组件
+  var App = Vue.extend();
+  //Home  News 组件都准备
+  var Home = Vue.extend({
+    template: '#home'
+  });
+  var News = Vue.extend({
+    template: '#news'
+  });
+  //准备路由
+  var router = new VueRouter();
+
+  //关联
+  router.map({
+    'home': {
+      component: Home,
+      subRoutes: { //子路由
+        'login': {
+          component: {
+            template: '#login'
+          }
+        },
+        'reg'  : {
+          component: {
+            template: '#reg'
+          }
+        }
+      }
+    },
+    'news': {
+      component: News
+    }
+  });
+  //启动路由
+  router.start(App, '#box');
+
+  //跳转路由
+  router.redirect({
+    '/': '/home'
+  });
+
+</script>
+</body>
+</html>

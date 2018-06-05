@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+
+<div id="box">
+  <aaa></aaa>
+</div>
+
+<template id="aaa">
+  <h1>fdd</h1>
+  <bbb :mmm="msg2" :my-msg="msg"></bbb>
+</template>
+
+<script>
+  new Vue({
+    el        : "#box",
+    data      : {
+      a: 'aaa'
+    },
+    components: {
+      'aaa': {
+        data(){
+          return {
+            msg : 222,
+            msg2: '我是父组件数据通过props向子组件传递数据'
+          }
+        },
+        template  : "#aaa",  //父组件模版
+        components: {
+          'bbb': {   //子组件
+            props   : {
+              'mmm'  : String,   //这里是需要注意的地方
+              'myMsg': Number
+            },
+            template: '<h3>我是bbb组件->{{mmm}} <br> {{myMsg}}</h3>'
+          }
+        }
+      },
+    }
+  });
+</script>
+</body>
+</html>

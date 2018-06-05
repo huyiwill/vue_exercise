@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+<div id="box">
+  <aaa></aaa>
+
+  <template id="aaa">
+    <span>我是父级 -> {{msg}}</span>
+    <bbb v-on:child-msg="get"></bbb>
+  </template>
+
+  <template id="bbb">
+    <h3>子组件-</h3>
+    <input type="button" value="send" v-on:click="send"/>
+  </template>
+</div>
+<script>
+  new Vue({
+    el        : "#box",
+    data      : {
+      a: 'aaa'
+    },
+    components: {
+      'aaa': {
+        data(){
+          return {
+            msg : 111,
+            msg2: '我是父组件的数据'
+          }
+        },
+        template  : '#aaa',
+        methods   : {
+          get: function(msg){
+            this.msg = msg;
+          },
+          getbak(msg){
+          },
+        },
+        components: {
+          'bbb': {
+            data(){
+              return {
+                a: '我是子组件的数据'
+              }
+            },
+            template: '#bbb',
+            methods : {
+              send: function(){
+                this.$emit('child-msg', this.a); //子组件向父组件发送数据
+              }
+            }
+          }
+        }
+      },
+    }
+  });
+</script>
+</body>
+</html>
