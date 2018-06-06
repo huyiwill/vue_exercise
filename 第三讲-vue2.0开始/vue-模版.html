@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+<div id="box">
+  <aaa></aaa>
+</div>
+
+
+<!--<script type="x-template" id="aa">-->
+<!--<h2 v-on:click="change">标题2->{{msg}}</h2>-->
+<!--<ul>-->
+<!--<li>111</li>-->
+<!--<li>222</li>-->
+<!--<li>333</li>-->
+<!--</ul>-->
+<!--</script>-->
+
+<template id="aa">
+  <h2 v-on:click="change">标题--{{msg}}</h2>
+  <ul>
+    <li>111</li>
+    <li>122</li>
+    <li>133</li>
+  </ul>
+</template>
+
+<script>
+  var vm = new Vue({
+    el        : '#box',
+    components: {
+      'aaa': {
+        data(){
+          return {
+            msg: 'ddd'
+          }
+        },
+        methods : {
+          change: function(){
+            this.msg = 'ads'
+          }
+        },
+        template: '#aa'
+      },
+    }
+  });
+</script>
+
+</body>
+</html>

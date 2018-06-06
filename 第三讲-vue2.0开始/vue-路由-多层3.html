@@ -31,8 +31,8 @@
 <template id="home">
   <h3>我是主页</h3>
   <div>
-    <a v-link="{path:'/home/login'}">登录</a>
-    <a v-link="{path:'/home/reg'}">注册</a>
+    <a v-link="{path:'/home/login/zns'}">登录</a>
+    <a v-link="{path:'/home/reg/strive'}">注册</a>
   </div>
   <router-view></router-view>
 </template>
@@ -40,24 +40,28 @@
 <template id="news">
   <h3>我是新闻</h3>
   <div>
-    <a v-link="{path:'/news/detail/001'}">新闻001</a>
-    <a v-link="{path:'/news/detail/002'}">新闻002</a>
+    <a v-link="{path:'/news/detail/001'}"> news 001</a>
+    <a v-link="{path:'/news/detail/002'}"> news 002</a>
   </div>
   <router-view></router-view>
 </template>
 
-
 <template id="detail">
   {{$route.params | json}}
+  <br>
+  {{$route.path}}
+  <br>
+  {{$route.query | json}}
 </template>
 
 <template id="login">
-  <strong>我是登录信息</strong>
+  <strong>我是登录信息{{$route.params | json}}</strong>
 </template>
 
 <template id="reg">
-  <strong>我是reg信息</strong>
+  <strong>我是注册信息{{$route.params | json}}</strong>
 </template>
+
 
 <script>
   //根组件
@@ -80,12 +84,12 @@
     'home': {
       component: Home,
       subRoutes: { //子路由
-        'login': {
+        'login/:name': {
           component: {
             template: '#login'
           }
         },
-        'reg'  : {
+        'reg/:reg'   : {
           component: {
             template: '#reg'
           }
@@ -95,11 +99,11 @@
     'news': {
       component: News,
       subRoutes: {
-        '/detail/:id': {  // :id 标识参数
+        '/detail/:id': {
           component: Detail
-        }
-      },
-    },
+        },
+      }
+    }
   });
   //启动路由
   router.start(App, '#box');

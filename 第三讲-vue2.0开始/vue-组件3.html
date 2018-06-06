@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="node_modules/vue/dist/vue.js"></script>
+  <style>
+
+  </style>
+</head>
+<body>
+<div id="box">
+  <aaa></aaa>
+</div>
+
+<template id="t">
+  <h3>{{msg}}</h3>
+</template>
+<script>
+  var vm = new Vue({
+    el        : '#box',
+    components: {
+      'aaa': {
+        data(){
+          return {
+            msg: 'hello'
+          }
+        },
+        methods : {
+          change(){
+            this.msg = 'asdf';
+          }
+        },
+        template: '#t'
+      },
+    }
+  });
+</script>
+</body>
+</html>
