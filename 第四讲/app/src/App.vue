@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-   asdf
-    <router-view/>
+    {{msg}}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  data(){
+    return {
+      msg:333
+    }
+  },
 }
 </script>
 
