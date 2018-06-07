@@ -1,0 +1,17 @@
+{
+  "name": "vue2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^8.5.4",
+    "webpack": "^4.11.1"
+  }
+}
