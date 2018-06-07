@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="vue.js"></script>
+</head>
+<body>
+<script>
+  window.onload = function(){
+    new Vue({
+      el        : "#box",
+      data      : {
+        a: '我是父组件数据'
+      },
+      components: {
+        'childs': {
+          data(){
+            return {
+              b: ''
+            }
+          },
+          template: "#child",
+          props   : ['aa'],
+          mounted(){
+            this.b = this.aa;
+          },
+          methods : {
+            change: function(){
+              this.b = 'is changed';
+            }
+          }
+        }
+      }
+    });
+  }
+</script>
+<template id="child">
+  <span>我是子组件</span>
+  <input type="button" value="按钮" @click="change"/>
+  --------------{{b}}
+</template>
+
+<div id="box">
+  父级 -> {{a}}
+  <br>
+  <childs :aa.sync="a"></childs>
+</div>
+</body>
+</html>
